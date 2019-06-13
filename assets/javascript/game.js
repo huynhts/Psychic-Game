@@ -28,9 +28,14 @@ randomLetter();
 document.onkeyup = function(letterPressed) {
 
 //Determines which key was pressed
-var userGuess = letterPressed.key;
-console.log(userGuess);
-userGuessed.push(" " + userGuess);
+if (letterPressed.keyCode >= 65 && letterPressed.keyCode <=90){
+    var userGuess = letterPressed.key;
+    console.log(userGuess);
+    userGuessed.push(" " + userGuess); 
+    } else {
+        alert("Please choose a letter between a to z");
+        guesses++;
+    };
 
     //if user wins by guessing correctly, add 1 to win, reset guess counter, reset guesses, call randomLetter function for new cpuLetter.
     if (userGuess === cpuLetter){
